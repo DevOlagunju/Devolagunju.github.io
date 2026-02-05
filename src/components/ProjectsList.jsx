@@ -94,9 +94,9 @@ const Projects = () => {
               <div className="project-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <div className="tech-badge-list">
+                <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.5rem'}}>
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="tech-badge">{tag}</span>
+                    <span key={i} style={{padding: '0.375rem 0.875rem', background: 'var(--bg-tertiary)', color: 'var(--text-secondary)', borderRadius: '8px', fontSize: '0.8rem', fontWeight: '500', border: '1px solid rgba(99, 102, 241, 0.2)'}}>{tag}</span>
                   ))}
                 </div>
               </div>
