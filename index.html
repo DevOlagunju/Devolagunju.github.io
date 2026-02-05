@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasiu Ibrahim | Software Engineer</title>
+    <meta name="description" content="Wasiu Ibrahim - Full-Stack Software Engineer with 11+ years experience in AI/ML, React, Node.js, Python. Available for freelance projects.">
+    <meta name="keywords" content="Software Engineer, Full-Stack Developer, AI/ML Engineer, React, Node.js, Python, Freelancer">
+    <meta name="author" content="Wasiu Ibrahim">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Wasiu Ibrahim | Software Engineer">
+    <meta property="og:description" content="Full-Stack Software Engineer specializing in AI/ML, with 11+ years of experience.">
+    <meta property="og:image" content="profile.png">
+    <meta property="og:url" content="https://wasiuibrahim.dev">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.svg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">WI</div>
+            <div class="preloader-spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+    <!-- Floating Controls -->
+    <div class="floating-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Wasiu Ibrahim</h1>
+                <h2 class="hero-title">Full-Stack Software Engineer</h2>
+                <p class="hero-description">
+                    A seasoned Full-Stack Software Engineer with expertise in AI/ML, offering a comprehensive 
+                    background in software development, project management, and team leadership. I develop 
+                    applications that align with business objectives and exceed client expectations.
+                </p>
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Available for Freelance</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Sheffield, UK</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://www.github.com/DevOlagunju/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/wasiu-ibrahim-28497a137/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:wasiu-ibrahim@outlook.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-container">
+                    <div class="hero-avatar">
+                        <img src="profile.png" alt="Wasiu Ibrahim - Software Engineer" loading="eager" />
+                    </div>
+                    <!-- Floating badges -->
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-code"></i>
+                        <span>11+ Years</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>100+ Projects</span>
+                    </div>
+                    <div class="floating-badge badge-3">
+                        <i class="fas fa-users"></i>
+                        <span>50+ Mentees</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Achievements Banner -->
+    <section class="achievements-banner">
+        <div class="container">
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>AI Engineer</h3>
+                        <p>Current Role at Mercor</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Full-Stack Expert</h3>
+                        <p>React, Node.js, Python, AI/ML</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Team Leader</h3>
+                        <p>Leading & Mentoring Teams</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Remote Expert</h3>
+                        <p>Global Collaboration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-container">
+                        <div class="about-avatar">
+                            <img src="profile.png" alt="Wasiu Ibrahim" />
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>
+                        I'm a seasoned Full-Stack Software Engineer with <strong>11+ years</strong> of experience 
+                        in building web applications, mobile apps, AI/ML systems, and distributed architectures. 
+                        I specialize in full-stack development with expertise in modern JavaScript/TypeScript ecosystems, 
+                        Python, cloud platforms (AWS, GCP), and AI technologies.
+                    </p>
+                    <p>
+                        Currently working as an AI Engineer at Mercor, I design and implement MCP (Model Context Protocol) 
+                        servers enabling LLMs and AI agents to interact with real-world tools. Previously at Nabtech Ltd., 
+                        I led engineering teams building healthcare applications like VHOD (Virtual Health On Demand) for 
+                        Common Spirit Health.
+                    </p>
+                    <p>
+                        I'm passionate about mentoring developers, contributing to open-source projects, and staying 
+                        at the forefront of AI/ML and full-stack development innovations.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">11+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Mentored Developers</span>
+                        </div>
+                    </div>
+                    <a href="WASIU_IBRAHIM.pdf" class="btn btn-primary" download="Wasiu_Ibrahim_Resume.pdf">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section">
+        <div class="container">
+            <h2 class="section-title">What I Offer</h2>
+            <p class="section-subtitle">Comprehensive software engineering services tailored to your needs</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI/ML Development</h3>
+                    <p>Build intelligent systems with LLMs, PyTorch, and cutting-edge AI technologies. Expertise in Model Context Protocol and agent-based systems.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> LLM Integration</li>
+                        <li><i class="fas fa-check"></i> AI Agent Development</li>
+                        <li><i class="fas fa-check"></i> Model Training & Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Full-Stack Development</h3>
+                    <p>End-to-end web and mobile application development using modern technologies like React, Node.js, and cloud platforms.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Web Applications</li>
+                        <li><i class="fas fa-check"></i> Mobile Apps (React Native)</li>
+                        <li><i class="fas fa-check"></i> API Development</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Technical Leadership</h3>
+                    <p>Lead engineering teams, mentor developers, and drive technical strategy with proven experience in project management.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Team Leadership</li>
+                        <li><i class="fas fa-check"></i> Code Reviews</li>
+                        <li><i class="fas fa-check"></i> Architecture Design</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Deploy and scale applications on AWS, GCP with CI/CD pipelines, containerization, and infrastructure as code.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> AWS/GCP Deployment</li>
+                        <li><i class="fas fa-check"></i> Docker & Kubernetes</li>
+                        <li><i class="fas fa-check"></i> CI/CD Pipelines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">Expertise across the full technology stack with 11+ years of hands-on experience</p>
+            
+            <!-- Core Skills -->
+            <div class="core-skills">
+                <div class="core-skill-item">
+                    <div class="core-skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Full-Stack Development</h3>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 95%"></div>
+                    </div>
+                    <span class="skill-percentage">Expert</span>
+                </div>
+
+                <div class="core-skill-item">
+                    <div class="core-skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI/ML Engineering</h3>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 90%"></div>
+                    </div>
+                    <span class="skill-percentage">Expert</span>
+                </div>
+
+                <div class="core-skill-item">
+                    <div class="core-skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 88%"></div>
+                    </div>
+                    <span class="skill-percentage">Advanced</span>
+                </div>
+
+                <div class="core-skill-item">
+                    <div class="core-skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Architecture</h3>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 92%"></div>
+                    </div>
+                    <span class="skill-percentage">Expert</span>
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="skills-categories">
+                <!-- Frontend -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Frontend Development</h3>
+                            <p>Modern UI/UX with cutting-edge frameworks</p>
+                        </div>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">React & Next.js</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">TypeScript</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 93%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">React Native & Expo</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-tags-compact">
+                        <span>Angular</span>
+                        <span>Tailwind CSS</span>
+                        <span>Material UI</span>
+                        <span>Redux</span>
+                        <span>Vue.js</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Backend Development</h3>
+                            <p>Scalable APIs and microservices</p>
+                        </div>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">Node.js & Express</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 96%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">Python & Flask</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">GraphQL & tRPC</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-tags-compact">
+                        <span>REST APIs</span>
+                        <span>gRPC</span>
+                        <span>Prisma</span>
+                        <span>Microservices</span>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Database & Storage</h3>
+                            <p>SQL, NoSQL, and caching solutions</p>
+                        </div>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">PostgreSQL & MySQL</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 91%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">Redis & Caching</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 87%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-tags-compact">
+                        <span>Firebase</span>
+                        <span>DynamoDB</span>
+                        <span>Neo4j</span>
+                        <span>Cassandra</span>
+                    </div>
+                </div>
+
+                <!-- AI/ML & Cloud -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>AI/ML & Cloud</h3>
+                            <p>Intelligent systems and cloud infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">LLM & AI Agents</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 93%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">AWS & GCP</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span class="skill-name">Docker & Kubernetes</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 89%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-tags-compact">
+                        <span>PyTorch</span>
+                        <span>OpenAI</span>
+                        <span>CI/CD</span>
+                        <span>Terraform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Real-world applications that make an impact</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1: VHOD -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">
+                            <i class="fas fa-hospital-alt"></i>
+                            <span>Healthcare</span>
+                        </div>
+                        <div class="project-status active">
+                            <i class="fas fa-circle"></i>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-image">
+                        <div class="project-placeholder healthcare">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="project-year">2024</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3>Virtual Health On Demand (VHOD)</h3>
+                        <p>Enterprise healthcare application for Common Spirit Health enabling patients to request virtual visits and connect with appropriate providers in real-time with integrated scheduling and video consultation features.</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Team Lead</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Nabtech Ltd.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-badge">React Native</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Expo</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://www.github.com/DevOlagunju/" class="project-btn primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://www.github.com/DevOlagunju/" class="project-btn secondary">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: MCP Server -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">
+                            <i class="fas fa-brain"></i>
+                            <span>AI/ML</span>
+                        </div>
+                        <div class="project-status active">
+                            <i class="fas fa-circle"></i>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-image">
+                        <div class="project-placeholder ai">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-year">2025</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3>MCP Server for AI Agents</h3>
+                        <p>Advanced Model Context Protocol servers enabling LLMs and AI agents to safely interact with simulated real-world tools featuring high-fidelity application simulations and deterministic backend environments.</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-code"></i>
+                                <span>Core Developer</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Mercor</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">LLM</span>
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">Docker</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://www.github.com/DevOlagunju/" class="project-btn primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://www.github.com/DevOlagunju/" class="project-btn secondary">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: Twilio Provider -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">
+                            <i class="fas fa-video"></i>
+                            <span>Communication</span>
+                        </div>
+                        <div class="project-status completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-image">
+                        <div class="project-placeholder video">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="project-year">2023</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3>Twilio Provider App</h3>
+                        <p>Enterprise video communication platform connecting patients and healthcare providers using Twilio Video for secure, HIPAA-compliant telehealth consultations with recording and real-time translation capabilities.</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Lead Developer</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Nabtech Ltd.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Twilio</span>
+                            <span class="tech-badge">WebRTC</span>
+                            <span class="tech-badge">Node.js</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://www.github.com/DevOlagunju/" class="project-btn primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://www.github.com/DevOlagunju/" class="project-btn secondary">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Andela Learning Map -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </div>
+                        <div class="project-status completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-image">
+                        <div class="project-placeholder education">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="project-year">2018</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3>Andela Learning Map</h3>
+                        <p>Comprehensive career development platform guiding developers in selecting career paths and tracking their professional growth with personalized learning recommendations and skill assessments.</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-code"></i>
+                                <span>Full-Stack Developer</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Andela</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">Material UI</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://www.github.com/DevOlagunju/" class="project-btn primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://www.github.com/DevOlagunju/" class="project-btn secondary">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-subtitle">My professional journey across leading tech companies</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>AI Engineer</h3>
+                            <span class="company">Mercor</span>
+                        </div>
+                        <span class="timeline-date">Jan 2025 - Present</span>
+                        <p>Designing and implementing MCP (Model Context Protocol) servers enabling LLMs and AI agents to safely interact with simulated real-world tools. Built high-fidelity application simulations and improved model training stability, consistency, and throughput. Leading technical architecture decisions across multiple AI systems.</p>
+                        <div class="timeline-tags">
+                            <span>LLM</span>
+                            <span>AI/ML</span>
+                            <span>MCP</span>
+                            <span>PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Senior Software Engineer</h3>
+                            <span class="company">Nabtech Ltd.</span>
+                        </div>
+                        <span class="timeline-date">Apr 2022 - Dec 2024</span>
+                        <p>Led a team of engineers to develop Virtual Health On Demand (VHOD) application for Common Spirit Health, allowing patients to request virtual visits with providers. Worked on multiple mobile app projects using React Native, Expo, and EAS. Spearheaded development of Twilio Provider app for patient-provider video connections.</p>
+                        <div class="timeline-tags">
+                            <span>React Native</span>
+                            <span>Node.js</span>
+                            <span>Team Lead</span>
+                            <span>Healthcare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Freelancer & Expert Mentor</h3>
+                            <span class="company">Codementor</span>
+                        </div>
+                        <span class="timeline-date">Dec 2017 - Dec 2022</span>
+                        <p>Mentored and instructed working developers on programming languages, tools, and concepts including Python, JavaScript, Node.js, C#, and respective frameworks. Conducted in-depth code reviews and assisted developers in resolving technical challenges.</p>
+                        <div class="timeline-tags">
+                            <span>Mentoring</span>
+                            <span>Code Review</span>
+                            <span>Full-Stack</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Full-Stack Web Developer</h3>
+                            <span class="company">Andela Nigeria</span>
+                        </div>
+                        <span class="timeline-date">Feb 2014 - May 2019</span>
+                        <p>Developed and maintained software for Andela and partner organizations. Built the Andela Learning Map using React.js, Material Design, Flask, and SQLAlchemy to guide developers in career path selection. Trained and mentored junior developers and boot camp participants.</p>
+                        <div class="timeline-tags">
+                            <span>React</span>
+                            <span>Flask</span>
+                            <span>Python</span>
+                            <span>Mentoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="section-subtitle">What colleagues and clients say about working with me</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Wasiu is an exceptional engineer with deep expertise in AI/ML and full-stack development. His ability to deliver complex projects on time while maintaining high code quality is remarkable."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Tech Lead</h4>
+                            <span>Mercor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Outstanding technical leadership and mentorship. Wasiu led our healthcare application project to success, demonstrating excellent communication and problem-solving skills."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Project Manager</h4>
+                            <span>Nabtech Ltd.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"A truly skilled mentor who helped me level up my coding abilities. Wasiu's patient teaching style and deep knowledge made complex concepts easy to understand."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Software Developer</h4>
+                            <span>Codementor Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's collaborate on your next project</p>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Info Cards -->
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Email Me</h3>
+                            <p>Get in touch via email</p>
+                            <a href="mailto:wasiu-ibrahim@outlook.com" class="contact-link">
+                                wasiu-ibrahim@outlook.com
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Call Me</h3>
+                            <p>Available for calls & meetings</p>
+                            <a href="tel:+447733678297" class="contact-link">
+                                +44 7733 678297
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Location</h3>
+                            <p>Based in the UK</p>
+                            <span class="contact-location">
+                                Sheffield, United Kingdom
+                                <i class="fas fa-globe"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="form-header">
+                        <h3>Send Me a Message</h3>
+                        <p>Fill out the form below and I'll get back to you within 24 hours</p>
+                    </div>
+                    
+                    <!-- 
+                    ALTERNATIVE: Use Formspree (simpler setup)
+                    1. Sign up at https://formspree.io
+                    2. Create a form and get your form ID
+                    3. Uncomment line below and replace YOUR_FORM_ID
+                    4. Comment out id="contact-form" and use action/method instead
+                    
+                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    -->
+                    
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">
+                                    <i class="fas fa-user"></i>
+                                    Full Name
+                                </label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address
+                                </label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Subject
+                            </label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project Discussion">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-dots"></i>
+                                Message
+                            </label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or inquiry..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> 
+                            Send Message
+                        </button>
+                    </form>
+
+                    <!-- Social Links -->
+                    <div class="contact-social-section">
+                        <p class="social-title">Or connect with me on</p>
+                        <div class="contact-socials">
+                            <a href="https://www.linkedin.com/in/wasiu-ibrahim-28497a137/" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.github.com/DevOlagunju/" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://x.com/wibarforce?s=21&t=hsEeF7DYssRuRvwe0hljUw" target="_blank" class="social-link">
+                                <i class="fab fa-x-twitter"></i>
+                                <span>X (Twitter)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Let's Build Something Amazing Together</h2>
+                    <p>I'm currently available for freelance projects and full-time opportunities. Whether you need AI/ML solutions, full-stack development, or technical leadership, let's discuss how I can help bring your vision to life.</p>
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Response within 24 hours</span>
+                        </div>
+                        <div class="cta-stat">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free initial consultation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary btn-large">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                    <a href="https://www.linkedin.com/in/wasiu-ibrahim-28497a137/" target="_blank" class="btn btn-secondary btn-large">
+                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Wasiu Ibrahim. All rights reserved.</p>
+                <p>Designed & Built with <i class="fas fa-heart"></i> by Wasiu Ibrahim</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
