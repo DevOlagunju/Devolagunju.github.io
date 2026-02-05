@@ -96,7 +96,7 @@ const Projects = () => {
                 <p>{project.description}</p>
                 <div className="project-tags">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="tag">{tag}</span>
+                    <span key={i}>{tag}</span>
                   ))}
                 </div>
               </div>
