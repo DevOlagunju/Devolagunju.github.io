@@ -1,0 +1,76 @@
+import { motion } from 'framer-motion'
+import { useInView } from '../hooks/useInView'
+import { FaCode, FaMobile, FaRobot, FaCloud, FaSearch, FaCog } from 'react-icons/fa'
+
+const Services = () => {
+  const [ref, isInView] = useInView({ threshold: 0.2 })
+
+  const services = [
+    {
+      icon: <FaCode />,
+      title: 'Full-Stack Development',
+      description: 'Building scalable web applications using modern frameworks like React, Node.js, and cloud technologies.'
+    },
+    {
+      icon: <FaMobile />,
+      title: 'Mobile App Development',
+      description: 'Creating responsive, cross-platform mobile applications that deliver seamless user experiences.'
+    },
+    {
+      icon: <FaRobot />,
+      title: 'AI/ML Solutions',
+      description: 'Developing intelligent systems using machine learning, natural language processing, and computer vision.'
+    },
+    {
+      icon: <FaCloud />,
+      title: 'Cloud Architecture',
+      description: 'Designing and implementing scalable cloud infrastructure on AWS, Azure, and Google Cloud Platform.'
+    },
+    {
+      icon: <FaSearch />,
+      title: 'Technical Consulting',
+      description: 'Providing expert guidance on technology strategy, architecture decisions, and best practices.'
+    },
+    {
+      icon: <FaCog />,
+      title: 'DevOps & CI/CD',
+      description: 'Streamlining development workflows with automated testing, deployment pipelines, and monitoring.'
+    }
+  ]
+
+  return (
+    <section id="services" className="services section" ref={ref}>
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">Services</h2>
+          <p className="section-subtitle">
+            Comprehensive solutions tailored to your business needs
+          </p>
+        </motion.div>
+
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              className="service-card"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+            >
+              <div className="service-icon">{service.icon}</div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Services
