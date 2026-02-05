@@ -14,16 +14,14 @@ Then open: http://localhost:8000
 
 ### Files Structure
 ```
-INTRO/
+portfolio/
 ├── index.html              # Main HTML structure
 ├── styles.css              # Styling and animations
 ├── script.js               # Interactive functionality
 ├── profile.png             # Professional photo
 ├── WASIU_IBRAHIM.pdf       # Resume/CV
 ├── favicon.svg             # Website favicon
-├── README.md               # Main documentation
-├── HOSTING-GUIDE.md        # Free hosting instructions
-└── EMAIL-SETUP-GUIDE.md    # Email form setup guide
+└── README.md               # Main documentation
 ```
 
 ## 👨‍💻 About Me
@@ -32,39 +30,6 @@ INTRO/
 - **Email:** wasiu-ibrahim@outlook.com
 - **Current Role:** AI Engineer at Mercor
 - **Experience:** 11+ years in Full-Stack Development and AI/ML
-
-## 🌐 Deploy Your Portfolio (Free Hosting)
-
-**Ready to make your portfolio live?**
-
-📖 **See `HOSTING-GUIDE.md` for complete step-by-step instructions**
-
-**Recommended Options:**
-- **Netlify** - Easiest (drag & drop ZIP file)
-- **Vercel** - Modern and fast
-- **GitHub Pages** - Great for developers
-- **Cloudflare Pages** - Best performance
-
-All options are **100% free** with HTTPS and custom domain support!
-
----
-
-## 📧 Email Form Setup
-
-**The contact form needs configuration to send emails to your inbox.**
-
-📖 **See `EMAIL-SETUP-GUIDE.md` for complete instructions**
-
-**Quick Setup:**
-1. Sign up at [EmailJS.com](https://www.emailjs.com) (free)
-2. Connect your email (Gmail/Outlook)
-3. Get your Service ID, Template ID, and Public Key
-4. Update `EMAILJS_CONFIG` in `script.js`
-5. Test the form!
-
-**Alternative:** Use Formspree (see comments in `index.html`)
-
----
 
 ## ✨ Features
 
@@ -103,8 +68,6 @@ All options are **100% free** with HTTPS and custom domain support!
 7. **Testimonials**: Update or remove testimonial cards
 
 ### Color Scheme
-The portfolio uses a harmonized color system documented in `COLOR-GUIDE.md`.
-
 **Quick color customization** in `styles.css`:
 ```css
 :root {
@@ -113,13 +76,6 @@ The portfolio uses a harmonized color system documented in `COLOR-GUIDE.md`.
     --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 }
 ```
-
-**See `COLOR-GUIDE.md` for:**
-- Complete color palette
-- Gradient system
-- Usage guidelines
-- Accessibility notes
-- Best practices
 
 ## 🛠️ Technologies Used
 - HTML5
@@ -132,18 +88,6 @@ The portfolio uses a harmonized color system documented in `COLOR-GUIDE.md`.
 - Desktop: 1024px+
 - Tablet: 768px - 1023px
 - Mobile: < 768px
-
-## 🌐 Deployment Options
-
-For detailed deployment instructions, see **`HOSTING-GUIDE.md`**
-
-**Quick options:**
-- **Netlify**: Drag and drop ZIP file (3 minutes)
-- **Vercel**: Import from GitHub (5 minutes)
-- **GitHub Pages**: Push code and enable Pages (5 minutes)
-- **Cloudflare Pages**: Connect Git repository (5 minutes)
-
-All options are free with automatic HTTPS and custom domain support!
 
 ## 📄 License
 Personal portfolio - feel free to use as inspiration!
