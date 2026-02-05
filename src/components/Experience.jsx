@@ -9,30 +9,30 @@ const Experience = () => {
     {
       title: 'AI Engineer',
       company: 'Mercor',
-      period: '2023 - Present',
+      period: 'Jan 2025 - Present',
       description: 'Leading AI/ML projects, developing intelligent systems, and implementing cutting-edge machine learning solutions for enterprise clients.',
       skills: ['Python', 'TensorFlow', 'PyTorch', 'NLP', 'Computer Vision']
     },
     {
-      title: 'Senior Full-Stack Developer',
-      company: 'Tech Solutions Inc',
-      period: '2020 - 2023',
-      description: 'Architected and developed scalable web applications, led a team of 8 developers, and improved system performance by 60%.',
-      skills: ['React', 'Node.js', 'AWS', 'MongoDB', 'Microservices']
+      title: 'Senior Software Engineer',
+      company: 'NABTECH LTD',
+      period: 'Apr 2022 - Dec 2024',
+      description: 'Led a team of Engineers to develop a Virtual Health On Demand Application (VHOD) for Common Spirit Health. Worked on mobile app projects with React Native, Expo, and EAS including Fixy app, Common Spirit app, sports metrics, and Clerestory.',
+      skills: ['React Native', 'Expo', 'EAS', 'Node.js', 'GraphQL', 'AWS', 'Twilio']
     },
     {
-      title: 'Full-Stack Developer',
-      company: 'Digital Innovations',
-      period: '2017 - 2020',
-      description: 'Built responsive web applications, integrated third-party APIs, and implemented CI/CD pipelines for automated deployments.',
-      skills: ['JavaScript', 'Express', 'PostgreSQL', 'Docker', 'Jenkins']
+      title: 'Freelancer and Expert Mentor',
+      company: 'CodeMentor',
+      period: 'Dec 2017 - Dec 2022',
+      description: 'Mentored and instructed working developers on programming languages, tools, and concepts. Conducted in-depth code reviews and assisted developers in resolving issues and challenges.',
+      skills: ['Python', 'JavaScript', 'Node.js', 'C#', 'React', 'Express', 'Next.js']
     },
     {
-      title: 'Software Engineer',
-      company: 'StartupHub',
-      period: '2014 - 2017',
-      description: 'Developed features for B2B SaaS platform, collaborated with cross-functional teams, and mentored junior developers.',
-      skills: ['React', 'Python', 'Django', 'REST APIs', 'MySQL']
+      title: 'Full-Stack Web Developer',
+      company: 'Andela Nigeria',
+      period: 'Feb 2014 - May 2019',
+      description: 'Developed and maintained software for Andela and partners. Built the Andela Learning Map using React JS and Material Design for the frontend and Flask and SQLAlchemy for the backend. Trained and mentored junior developers.',
+      skills: ['React', 'Node.js', 'Python', 'Flask', 'Material UI', 'SQLAlchemy']
     }
   ]
 
