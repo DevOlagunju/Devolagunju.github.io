@@ -10,29 +10,29 @@ const Experience = () => {
       title: 'AI Engineer',
       company: 'Mercor',
       period: 'Jan 2025 - Present',
-      description: 'Leading AI/ML projects, developing intelligent systems, and implementing cutting-edge machine learning solutions for enterprise clients.',
-      skills: ['Python', 'TensorFlow', 'PyTorch', 'NLP', 'Computer Vision']
+      description: 'Improved AI model training stability, consistency, and throughput, resulting in more reliable development cycles. Enabled deployment of key LLM-driven features by designing and implementing robust MCP integrations. Designed and implemented MCP (Model Context Protocol) servers enabling LLMs and AI agents to safely interact with simulated real-world tools. Built high-fidelity application simulations that replicate real app behavior, outputs, and workflows for agent tool-use learning.',
+      skills: ['Python', 'PyTorch', 'LLM', 'OpenAI', 'Claude', 'MCP', 'AI/ML', 'TensorFlow']
     },
     {
       title: 'Senior Software Engineer',
       company: 'NABTECH LTD',
       period: 'Apr 2022 - Dec 2024',
-      description: 'Led a team of Engineers to develop a Virtual Health On Demand Application (VHOD) for Common Spirit Health. Worked on mobile app projects with React Native, Expo, and EAS including Fixy app, Common Spirit app, sports metrics, and Clerestory.',
-      skills: ['React Native', 'Expo', 'EAS', 'Node.js', 'GraphQL', 'AWS', 'Twilio']
+      description: 'Led a team of Engineers to develop a Virtual Health On Demand Application (VHOD) for Common Spirit Health, allowing patients to request virtual visits with appropriate providers. Worked on mobile app projects with React Native, Expo, and EAS including Fixy app, Common Spirit app, sports metrics, and Clerestory. Spearheaded the development of the Twilio Provider app enabling patients and providers to connect using Twilio Video.',
+      skills: ['React Native', 'Expo', 'EAS', 'Node.js', 'GraphQL', 'Next.js', 'AWS', 'Twilio']
     },
     {
       title: 'Freelancer and Expert Mentor',
       company: 'CodeMentor',
       period: 'Dec 2017 - Dec 2022',
-      description: 'Mentored and instructed working developers on programming languages, tools, and concepts. Conducted in-depth code reviews and assisted developers in resolving issues and challenges.',
-      skills: ['Python', 'JavaScript', 'Node.js', 'C#', 'React', 'Express', 'Next.js']
+      description: 'Leveraged coding expertise to mentor and instruct working developers on programming languages, tools, and concepts including Python, JavaScript, Node.js, C#, and respective frameworks (Express, React, GraphQL, Next.js, Angular, .Net Core). Assisted developers in resolving issues and challenges while performing day-to-day software-related tasks. Conducted in-depth code reviews in support of developers and projects.',
+      skills: ['Python', 'JavaScript', 'Node.js', 'C#', 'React', 'Express', 'Next.js', 'GraphQL']
     },
     {
       title: 'Full-Stack Web Developer',
-      company: 'Andela Nigeria',
+      company: 'Andela Nigeria, Lagos',
       period: 'Feb 2014 - May 2019',
-      description: 'Developed and maintained software for Andela and partners. Built the Andela Learning Map using React JS and Material Design for the frontend and Flask and SQLAlchemy for the backend. Trained and mentored junior developers.',
-      skills: ['React', 'Node.js', 'Python', 'Flask', 'Material UI', 'SQLAlchemy']
+      description: 'Oversaw developing and maintaining new and old software owned by Andela/Andela Partners. Managed the codebase and supported new & innovative projects with most applications built with React JS, Node JS, and Material UI. Played a vital role as a team member in building the Andela Learning Map to guide Andela developers in selecting career paths and tracking growth using React JS and Material Design for the front end and Flask and SQLAlchemy for the back end. Promoted the development of a positive and knowledgeable work environment by training and mentoring junior developers and development boot camp participants.',
+      skills: ['React', 'Node.js', 'Python', 'Flask', 'Material UI', 'SQLAlchemy', 'TypeScript']
     }
   ]
 
