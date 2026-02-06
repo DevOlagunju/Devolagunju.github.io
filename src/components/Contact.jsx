@@ -12,6 +12,7 @@ const Contact = () => {
     message: ''
   })
   const [status, setStatus] = useState({ type: '', message: '' })
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -22,10 +23,13 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
+    setStatus({ type: '', message: '' })
 
     // Basic validation
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       setStatus({ type: 'error', message: 'Please fill in all fields' })
+      setLoading(false)
       return
     }
 
@@ -33,16 +37,45 @@ const Contact = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(formData.email)) {
       setStatus({ type: 'error', message: 'Please enter a valid email address' })
+      setLoading(false)
       return
     }
 
-    setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' })
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    try {
+      const response = await fetch('https://formspree.io/f/xwvnkknr', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
 
-    // Clear success message after 5 seconds
-    setTimeout(() => {
-      setStatus({ type: '', message: '' })
-    }, 5000)
+      if (response.ok) {
+        setStatus({ 
+          type: 'success', 
+          message: '✅ Message sent successfully! I\'ll get back to you within 24 hours.' 
+        })
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setStatus({ type: '', message: '' })
+        }, 5000)
+      } else {
+        setStatus({ 
+          type: 'error', 
+          message: '❌ Oops! Something went wrong. Please try again or email me directly.' 
+        })
+      }
+    } catch (error) {
+      setStatus({ 
+        type: 'error', 
+        message: '❌ Network error. Please check your connection and try again.' 
+      })
+    }
+
+    setLoading(false)
   }
 
   return (
@@ -181,8 +214,16 @@ const Contact = () => {
                 </motion.div>
               )}
 
-              <button type="submit" className="btn btn-primary btn-large">
-                <FaPaperPlane /> Send Message
+              <button type="submit" className="btn btn-primary btn-large" disabled={loading}>
+                {loading ? (
+                  <>
+                    <span className="spinner"></span> Sending...
+                  </>
+                ) : (
+                  <>
+                    <FaPaperPlane /> Send Message
+                  </>
+                )}
               </button>
             </form>
 
