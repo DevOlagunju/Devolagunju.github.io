@@ -22,24 +22,39 @@ const Contact = () => {
   }
 
   const handleSubmit = async (e) => {
+    console.log('🚀 Form submitted!')
     e.preventDefault()
     setLoading(true)
     setStatus({ type: '', message: '' })
 
     const form = e.target
+    const formDataToSend = new FormData(form)
+    
+    console.log('📝 Form data:', {
+      name: formDataToSend.get('name'),
+      email: formDataToSend.get('email'),
+      subject: formDataToSend.get('subject'),
+      message: formDataToSend.get('message')
+    })
 
     try {
+      console.log('📤 Sending to Formspree...')
+      
       const response = await fetch('https://formspree.io/f/xwvnkknr', {
         method: 'POST',
-        body: new FormData(form),
+        body: formDataToSend,
         headers: {
           'Accept': 'application/json'
         }
       })
 
+      console.log('📥 Response status:', response.status)
+      
       const data = await response.json()
+      console.log('📄 Response data:', data)
 
       if (response.ok) {
+        console.log('✅ Success!')
         setStatus({ 
           type: 'success', 
           message: '✅ Message sent successfully! I\'ll get back to you within 24 hours.' 
@@ -52,9 +67,11 @@ const Contact = () => {
           setStatus({ type: '', message: '' })
         }, 5000)
       } else {
+        console.log('❌ Error response')
         // Handle Formspree specific errors
         if (data.errors) {
           const errorMsg = data.errors.map(err => err.message).join(', ')
+          console.log('Error details:', errorMsg)
           setStatus({ 
             type: 'error', 
             message: `❌ Error: ${errorMsg}` 
@@ -67,7 +84,7 @@ const Contact = () => {
         }
       }
     } catch (error) {
-      console.error('Formspree Error:', error)
+      console.error('💥 Formspree Error:', error)
       setStatus({ 
         type: 'error', 
         message: '❌ Network error. Please check your connection and try again.' 
@@ -75,6 +92,7 @@ const Contact = () => {
     }
 
     setLoading(false)
+    console.log('✨ Form submission complete')
   }
 
   return (
