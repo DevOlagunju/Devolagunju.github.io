@@ -26,30 +26,18 @@ const Contact = () => {
     setLoading(true)
     setStatus({ type: '', message: '' })
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      setStatus({ type: 'error', message: 'Please fill in all fields' })
-      setLoading(false)
-      return
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(formData.email)) {
-      setStatus({ type: 'error', message: 'Please enter a valid email address' })
-      setLoading(false)
-      return
-    }
+    const form = e.target
 
     try {
       const response = await fetch('https://formspree.io/f/xwvnkknr', {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: new FormData(form),
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Accept': 'application/json'
         }
       })
+
+      const data = await response.json()
 
       if (response.ok) {
         setStatus({ 
@@ -57,18 +45,29 @@ const Contact = () => {
           message: '✅ Message sent successfully! I\'ll get back to you within 24 hours.' 
         })
         setFormData({ name: '', email: '', subject: '', message: '' })
+        form.reset()
         
         // Clear success message after 5 seconds
         setTimeout(() => {
           setStatus({ type: '', message: '' })
         }, 5000)
       } else {
-        setStatus({ 
-          type: 'error', 
-          message: '❌ Oops! Something went wrong. Please try again or email me directly.' 
-        })
+        // Handle Formspree specific errors
+        if (data.errors) {
+          const errorMsg = data.errors.map(err => err.message).join(', ')
+          setStatus({ 
+            type: 'error', 
+            message: `❌ Error: ${errorMsg}` 
+          })
+        } else {
+          setStatus({ 
+            type: 'error', 
+            message: '❌ Oops! Something went wrong. Please try again or email me directly.' 
+          })
+        }
       }
     } catch (error) {
+      console.error('Formspree Error:', error)
       setStatus({ 
         type: 'error', 
         message: '❌ Network error. Please check your connection and try again.' 
@@ -151,6 +150,9 @@ const Contact = () => {
             </div>
 
             <form className="contact-form" onSubmit={handleSubmit}>
+              {/* Hidden field for Formspree reply-to */}
+              <input type="hidden" name="_replyto" value={formData.email} />
+              
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Full Name</label>
