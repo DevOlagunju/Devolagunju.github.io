@@ -3173,6 +3173,11 @@ Color Alternation Pattern:
 }
 
 @media (max-width: 768px) {
+    /* Hide Featured Projects section on mobile */
+    .projects {
+        display: none !important;
+    }
+    
     .floating-controls {
         top: 1rem;
         right: 1rem;
