@@ -167,7 +167,7 @@ const Contact = () => {
               <p>Share your project details or ideas, and I'll respond within 24 hours to discuss how we can work together</p>
             </div>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" onSubmit={handleSubmit} action="https://formspree.io/f/xwvnkknr" method="POST">
               {/* Hidden field for Formspree reply-to */}
               <input type="hidden" name="_replyto" value={formData.email} />
               
@@ -181,6 +181,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
+                    autoComplete="name"
                     required
                   />
                 </div>
@@ -193,6 +194,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
+                    autoComplete="email"
                     required
                   />
                 </div>
@@ -207,6 +209,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="Project Inquiry"
+                  autoComplete="off"
                   required
                 />
               </div>
@@ -220,6 +223,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Tell me about your project..."
                   rows="5"
+                  autoComplete="off"
                   required
                 ></textarea>
               </div>
