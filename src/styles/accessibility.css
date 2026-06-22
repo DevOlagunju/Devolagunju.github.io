@@ -1,0 +1,330 @@
+/* ===== Visibility, contrast & UI-friendly interactions ===== */
+
+/* --- Readable text hierarchy (light mode tweaks) --- */
+.section-subtitle,
+.section-subtitle-rich,
+.trust-marquee-label span,
+.about-skills-label {
+  color: var(--text-secondary);
+}
+
+.hero-description,
+.about-text p,
+.testimonial-slide-text {
+  color: var(--text-secondary);
+  max-width: 65ch;
+}
+
+/* --- Dark mode: higher contrast text on purple surfaces --- */
+[data-theme="dark"] {
+  --text-primary: #faf5ff;
+  --text-secondary: #e4e4f7;
+  --text-tertiary: #b8a9f0;
+  --text-light: #9f8fd4;
+  --focus-ring: #ddd6fe;
+  --input-bg: #2a1f5e;
+  --input-border: #6d28d9;
+}
+
+[data-theme="dark"] .hero-description,
+[data-theme="dark"] .about-text p,
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .section-subtitle-rich,
+[data-theme="dark"] .trust-marquee-item,
+[data-theme="dark"] .highlight-item,
+[data-theme="dark"] .stat-card p,
+[data-theme="dark"] .testimonial-slide-text {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .about-role,
+[data-theme="dark"] .about-highlight {
+  color: var(--primary-lighter);
+}
+
+[data-theme="dark"] .highlight-item svg {
+  color: var(--success-light);
+}
+
+.trust-marquee-item {
+  opacity: 0.85;
+  color: var(--text-secondary);
+}
+
+.trust-marquee-item:hover {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .trust-marquee-item:hover {
+  color: var(--primary-lighter);
+}
+
+/* --- Gradient text: solid fallback so text never disappears --- */
+.hero-title-word {
+  color: var(--text-primary);
+}
+
+.section-title-text {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .hero-title-word {
+  color: var(--primary-lighter);
+}
+
+[data-theme="dark"] .section-title-text {
+  color: var(--text-primary);
+}
+
+/* --- Buttons: clear states in both themes --- */
+.btn-primary {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  font-weight: 600;
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .btn-secondary {
+  color: var(--primary-lighter);
+  border-color: var(--primary-light);
+  background: rgba(30, 27, 75, 0.6);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  color: #ffffff;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+}
+
+/* --- Links & social icons --- */
+a {
+  color: inherit;
+}
+
+.hero-socials a {
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+}
+
+.hero-socials a:hover,
+.hero-socials a:focus-visible {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background: var(--brand-glow);
+}
+
+[data-theme="dark"] .hero-socials a {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border-color: var(--border-dark);
+}
+
+/* --- Form fields: visible borders & focus --- */
+.form-group input,
+.form-group textarea {
+  border: 2px solid var(--border-dark);
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+  background: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-primary);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-tertiary);
+  opacity: 1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--brand-glow);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  outline-color: var(--focus-ring);
+}
+
+/* --- Focus rings (keyboard navigation) --- */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: var(--focus-ring);
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.navbar-links a:focus-visible,
+.navbar-toggle:focus-visible,
+.project-filter-btn:focus-visible,
+.testimonial-slider-controls > button:focus-visible,
+.back-to-top:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--brand-glow);
+}
+
+/* --- Touch-friendly hit areas --- */
+@media (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .navbar-toggle,
+  .navbar-theme,
+  .hero-socials a,
+  .back-to-top,
+  .project-filter-btn,
+  .testimonial-slider-controls > button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .navbar-links a {
+    min-height: 40px;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* --- Cards & tags: readable on all backgrounds --- */
+.stat-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .stat-card {
+  background: var(--bg-tertiary);
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] .stat-card p {
+  color: var(--text-tertiary);
+}
+
+.skill-tag {
+  color: var(--text-primary);
+  border: 1px solid var(--border-dark);
+}
+
+[data-theme="dark"] .skill-tag {
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] .skill-tag:hover {
+  color: #ffffff;
+}
+
+.project-filter-btn {
+  border: 1px solid var(--border-dark);
+  color: var(--text-secondary);
+}
+
+.project-filter-btn.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* --- Navbar: active link stands out --- */
+.navbar-links a {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .navbar-links a {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .navbar-links a:hover,
+[data-theme="dark"] .navbar-links a.active {
+  color: var(--primary-lighter);
+}
+
+/* --- Testimonial & project cards --- */
+.testimonial-slide-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+[data-theme="dark"] .testimonial-slide-card {
+  border-color: var(--border-dark);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.testimonial-slide-author p {
+  color: var(--text-tertiary);
+}
+
+/* --- Selection & scroll progress --- */
+::selection {
+  background: rgba(147, 51, 234, 0.35);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] ::selection {
+  background: rgba(192, 132, 252, 0.45);
+  color: #ffffff;
+}
+
+/* --- High contrast preference --- */
+@media (prefers-contrast: more) {
+  :root {
+    --text-secondary: #1e293b;
+    --border-color: #7e22ce;
+  }
+
+  [data-theme="dark"] {
+    --text-primary: #ffffff;
+    --text-secondary: #f3e8ff;
+    --border-color: #c084fc;
+  }
+
+  .btn-secondary {
+    border-width: 2px;
+  }
+
+  .hero-title-word,
+  .section-title-text,
+  .hero-name-3d-text,
+  .about-name-3d-text {
+    -webkit-text-fill-color: currentColor !important;
+    background: none !important;
+  }
+}
+
+/* --- Respect reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .section-title-text {
+    animation: none !important;
+  }
+}

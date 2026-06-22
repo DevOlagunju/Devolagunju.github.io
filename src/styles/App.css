@@ -65,7 +65,8 @@
     
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-family-display: 'Poppins', var(--font-family);
+    --font-family-display: 'Syne', 'Outfit', var(--font-family);
+    --font-family-name: 'Playfair Display', Georgia, 'Times New Roman', serif;
     
     /* Layout */
     --max-width: 1200px;
@@ -74,16 +75,26 @@
     --border-radius-lg: 16px;
     --border-radius-xl: 20px;
     --border-radius-2xl: 24px;
+
+    /* Semantic aliases — keep all stylesheets on the same palette */
+    --primary: var(--primary-color);
+    --accent: var(--accent-color);
+    --text-muted: var(--text-tertiary);
+    --card-bg: var(--bg-primary);
+    --card-border: var(--border-color);
+    --brand-gradient: var(--gradient-primary);
+    --brand-glow: rgba(147, 51, 234, 0.12);
+    --brand-glow-strong: rgba(147, 51, 234, 0.25);
 }
 
 /* ===== Dark Theme - Purple Harmony ===== */
 [data-theme="dark"] {
-    /* Text Colors - Refined Contrast */
-    --text-primary: #f3e8ff;
-    --text-secondary: #e9d5ff;
-    --text-tertiary: #c084fc;
-    --text-light: #a855f7;
-    --text-lighter: #9333ea;
+    /* Text Colors — WCAG-friendly on deep purple backgrounds */
+    --text-primary: #faf5ff;
+    --text-secondary: #e4e4f7;
+    --text-tertiary: #b8a9f0;
+    --text-light: #9f8fd4;
+    --text-lighter: #c084fc;
     
     /* Background Colors - Deep Purple Tones */
     --bg-primary: #1e1b4b;
@@ -108,6 +119,11 @@
     --primary-light: #c084fc;
     --secondary-color: #d946ef;
     --accent-light: #e879f9;
+
+    /* Dark-mode surface tokens */
+    --card-bg: var(--bg-secondary);
+    --brand-glow: rgba(147, 51, 234, 0.2);
+    --brand-glow-strong: rgba(147, 51, 234, 0.4);
 }
 
 [data-theme="dark"] .theme-toggle {
@@ -402,7 +418,7 @@ ul {
     color: var(--text-secondary);
     font-size: 1.1rem;
     max-width: 600px;
-    margin: -1.5rem auto 3rem;
+    margin: 0.75rem auto 0;
     line-height: 1.6;
 }
 
@@ -597,14 +613,19 @@ ul {
 }
 
 .hero-name {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-family: var(--font-family-name);
+    font-size: clamp(2.75rem, 6.5vw, 4.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.hero-name:not(.hero-name-3d) {
     background: var(--bg-gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -1004,73 +1025,74 @@ Color Alternation Pattern:
     position: relative;
 }
 
+.section-header-rich {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header-rich .section-subtitle,
+.section-header-rich .section-subtitle-rich {
+  text-align: center;
+  margin: 0.75rem auto 0 !important;
+  max-width: 560px;
+}
+
 .about-content {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 5rem;
-    align-items: start;
-    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 0;
+}
+
+@media (min-width: 992px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3.5rem;
+    }
+
+    .about-image {
+        max-width: 300px;
+    }
+
+    .about-name,
+    .about-role,
+    .about-text p {
+        text-align: left;
+    }
+}
+
+.about-image {
+    width: 100%;
+    max-width: 300px;
+    flex-shrink: 0;
 }
 
 .about-image-container {
-    width: 380px;
-    height: 380px;
-    margin: 0 auto;
+    width: 100%;
+    aspect-ratio: 3 / 4;
     position: relative;
 }
 
-.about-image-container::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: var(--gradient-primary);
-    border-radius: 45px;
-    opacity: 0.12;
-    z-index: -1;
-    animation: pulse 4s ease-in-out infinite;
-}
-
+.about-image-container::before,
 .about-image-container::after {
-    content: '';
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    bottom: -8px;
-    left: -8px;
-    border: 3px solid var(--primary-light);
-    border-radius: 42px;
-    opacity: 0.2;
-    z-index: -1;
+    display: none;
 }
 
 .about-avatar {
     width: 100%;
     height: 100%;
-    border-radius: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 
-        0 25px 50px rgba(147, 51, 234, 0.25),
-        0 0 0 8px rgba(255, 255, 255, 1),
-        0 0 0 12px rgba(147, 51, 234, 0.1);
-    position: relative;
+    border-radius: 16px;
     overflow: hidden;
-    border: 6px solid white;
-    background: var(--bg-gradient-primary);
+    border: 1px solid rgba(147, 51, 234, 0.12);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+    background: var(--bg-secondary);
 }
 
+.about-avatar::before,
 .about-avatar::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    background: linear-gradient(135deg, transparent 0%, rgba(147, 51, 234, 0.08) 100%);
-    pointer-events: none;
-    z-index: 2;
+    display: none !important;
 }
 
 .about-avatar img {
@@ -1078,53 +1100,58 @@ Color Alternation Pattern:
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: brightness(1.05) contrast(1.08) saturate(1.1);
-    position: relative;
-    z-index: 1;
+    display: block;
 }
 
-.about-image-container:hover .about-avatar img {
-    transform: scale(1.05);
-}
-
-.about-avatar::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-    transform: translateX(-100%);
-    z-index: 1;
-}
-
-.about-image-container:hover .about-avatar::before {
-    animation: shimmer 1.5s ease-in-out;
-}
-
-@keyframes shimmer {
-    to {
-        transform: translateX(100%);
-    }
+.about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    flex: 1;
+    min-width: 0;
 }
 
 .about-text {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.about-name {
+    font-family: var(--font-family-name);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.about-name:not(.about-name-3d) {
+    color: var(--text-primary);
+    margin: 0 0 0.35rem;
+}
+
+.about-role {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0 0 1.25rem;
 }
 
 .about-text p {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
-    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.75;
     text-align: left;
 }
 
-.about-text p strong {
-    background: var(--bg-gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.about-highlight {
+    color: var(--primary-color);
     font-weight: 700;
+}
+
+[data-theme="dark"] .about-highlight {
+    color: var(--primary-light);
 }
 
 .about-text .btn {
@@ -1241,7 +1268,8 @@ Color Alternation Pattern:
     margin-bottom: 0.5rem;
 }
 
-.stat-card h3 {
+.stat-card h3,
+.stat-card .counter-value {
     font-size: 2.5rem;
     font-weight: 800;
     background: var(--bg-gradient-primary);
@@ -1250,6 +1278,7 @@ Color Alternation Pattern:
     background-clip: text;
     line-height: 1;
     margin: 0;
+    display: block;
 }
 
 .stat-card p {
@@ -3171,17 +3200,18 @@ Color Alternation Pattern:
     }
 
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
     }
 
     .about-image {
-        display: flex;
-        justify-content: center;
+        max-width: 280px;
     }
 
-    .about-text {
+    .about-text,
+    .about-name,
+    .about-role {
         text-align: center;
     }
 
@@ -3190,7 +3220,7 @@ Color Alternation Pattern:
     }
 
     .about-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
 
@@ -3401,8 +3431,7 @@ Color Alternation Pattern:
     }
     
     .about-image-container {
-        width: 250px;
-        height: 250px;
+        max-width: 280px;
     }
     
     .about-avatar {

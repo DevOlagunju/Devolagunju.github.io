@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
+import SectionHeader from './SectionHeader'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaPaperPlane } from 'react-icons/fa'
 
 const Contact = () => {
@@ -96,18 +97,13 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="contact section" ref={ref}>
+    <section id="contact" className="contact section section-rich" ref={ref}>
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">Let's Build Something Great Together</h2>
-          <p className="section-subtitle">
-            I'm always open to discussing new opportunities, innovative projects, or partnerships that drive meaningful impact
-          </p>
-        </motion.div>
+        <SectionHeader
+          title="Let's Build Something Great Together"
+          subtitle="I'm always open to discussing new opportunities, innovative projects, or partnerships that drive meaningful impact"
+          isInView={isInView}
+        />
 
         <div className="contact-wrapper">
           <motion.div
@@ -241,7 +237,7 @@ const Contact = () => {
               <button type="submit" className="btn btn-primary btn-large" disabled={loading}>
                 {loading ? (
                   <>
-                    <span className="spinner"></span> Sending...
+                    <span className="btn-spinner"></span> Sending...
                   </>
                 ) : (
                   <>

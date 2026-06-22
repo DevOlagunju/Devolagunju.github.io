@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FaMoon, FaSun } from 'react-icons/fa'
 import Preloader from './components/Preloader'
-import ThemeToggle from './components/ThemeToggle'
+import Navbar from './components/Navbar'
+import AmbientBackground from './components/AmbientBackground'
+import ScrollProgress from './components/ScrollProgress'
+import CustomCursor from './components/CustomCursor'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
@@ -12,7 +16,7 @@ import Contact from './components/Contact'
 import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
-import './styles/App.css'
+import TrustMarquee from './components/TrustMarquee'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -21,26 +25,34 @@ function App() {
   })
 
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 2000)
-
+    const timer = setTimeout(() => setLoading(false), 2200)
     return () => clearTimeout(timer)
   }, [])
 
   useEffect(() => {
-    // Apply theme
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('theme', theme)
   }, [theme])
+
+  useEffect(() => {
+    const markLoaded = (img) => img.classList.add('loaded')
+    document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
+      if (img.complete) markLoaded(img)
+      else img.addEventListener('load', () => markLoaded(img), { once: true })
+    })
+  }, [loading])
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light')
   }
 
+  const ThemeIcon = theme === 'dark' ? <FaSun /> : <FaMoon />
+
   return (
     <div className="App">
+      <CustomCursor />
+      <AmbientBackground />
+
       <AnimatePresence>
         {loading && <Preloader />}
       </AnimatePresence>
@@ -49,10 +61,12 @@ function App() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+          <ScrollProgress />
+          <Navbar theme={theme} toggleTheme={toggleTheme} ThemeIcon={ThemeIcon} />
           <Hero />
+          <TrustMarquee />
           <About />
           <Services />
           <Experience />

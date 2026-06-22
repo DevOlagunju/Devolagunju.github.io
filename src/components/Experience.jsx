@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 import { FaBriefcase } from 'react-icons/fa'
+import SectionHeader from './SectionHeader'
 
 const Experience = () => {
   const [ref, isInView] = useInView({ threshold: 0.2 })
@@ -37,27 +38,23 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="experience section" ref={ref}>
+    <section id="experience" className="experience section section-rich" ref={ref}>
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">Experience</h2>
-          <p className="section-subtitle">
-            A decade of delivering excellence in software engineering
-          </p>
-        </motion.div>
+        <SectionHeader
+          title="Experience"
+          subtitle="A decade of delivering excellence in software engineering"
+          isInView={isInView}
+        />
 
-        <div className="timeline">
+        <div className={`timeline timeline-animated ${isInView ? 'in-view' : ''}`}>
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
               className="timeline-item"
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ scale: 1.01 }}
             >
               <div className="timeline-icon">
                 <FaBriefcase />

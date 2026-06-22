@@ -13,7 +13,7 @@ const CallToAction = () => {
   ]
 
   return (
-    <section className="cta-section" ref={ref}>
+    <section className="cta-section cta-rich" ref={ref}>
       <div className="container">
         <motion.div
           className="cta-wrapper"
