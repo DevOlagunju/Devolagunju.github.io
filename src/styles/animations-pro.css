@@ -330,12 +330,11 @@
 }
 
 .timeline-animated .timeline-icon {
-  transition: box-shadow 0.4s, transform 0.4s;
+  transition: box-shadow 0.4s;
 }
 
 .timeline-animated.in-view .timeline-item:hover .timeline-icon {
   box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
-  transform: translateX(-50%) scale(1.08);
 }
 
 /* --- Section header accent line --- */

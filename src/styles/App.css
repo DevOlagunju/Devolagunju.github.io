@@ -2054,8 +2054,11 @@ Color Alternation Pattern:
 }
 
 .timeline-item {
-    position: relative;
-    padding-left: calc(var(--timeline-rail) + (var(--timeline-icon-size) / 2) + 1.25rem);
+    display: grid;
+    grid-template-columns: calc(var(--timeline-rail) * 2) minmax(0, 1fr);
+    column-gap: 1.25rem;
+    align-items: start;
+    padding-left: 0;
     padding-bottom: 3rem;
 }
 
@@ -2064,10 +2067,15 @@ Color Alternation Pattern:
 }
 
 .timeline-icon {
-    position: absolute;
-    left: var(--timeline-rail);
-    top: 1.5rem;
-    transform: translateX(-50%);
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    justify-self: center;
+    align-self: start;
+    margin-top: 1.5rem;
+    grid-column: 1;
+    grid-row: 1;
     width: var(--timeline-icon-size);
     height: var(--timeline-icon-size);
     display: flex;
@@ -2108,6 +2116,8 @@ Color Alternation Pattern:
 }
 
 .timeline-content {
+    grid-column: 2;
+    grid-row: 1;
     background: var(--bg-primary);
     padding: 2rem;
     border-radius: 16px;
@@ -2117,16 +2127,22 @@ Color Alternation Pattern:
     position: relative;
     z-index: 2;
     min-width: 0;
+    overflow: visible;
 }
 
 .timeline-content h3 {
+    font-family: var(--font-family);
     font-size: 1.25rem;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.5;
+    letter-spacing: normal;
     color: var(--text-primary);
     margin-bottom: 0.35rem;
     white-space: normal;
     word-break: normal;
+    overflow: visible;
+    transform: none;
+    padding-bottom: 0.1em;
 }
 
 .timeline-content::before {
@@ -2155,7 +2171,17 @@ Color Alternation Pattern:
     color: var(--primary-color);
     font-weight: 600;
     font-size: 1rem;
+    line-height: 1.45;
+    letter-spacing: normal;
     margin-bottom: 0.75rem;
+    overflow: visible;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    overflow: visible;
 }
 
 .timeline-header {
@@ -2197,11 +2223,6 @@ Color Alternation Pattern:
     font-weight: 600;
     margin-bottom: 1rem;
     border: 1px solid rgba(147, 51, 234, 0.2);
-}
-
-.timeline-content p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
 }
 
 .timeline-tags {
@@ -3441,12 +3462,12 @@ Color Alternation Pattern:
     }
 
     .timeline-item {
-        padding-left: calc(var(--timeline-rail) + (var(--timeline-icon-size) / 2) + 1rem);
+        column-gap: 0.875rem;
     }
 
     .timeline-icon {
         font-size: 0.85rem;
-        top: 1.25rem;
+        margin-top: 1.25rem;
     }
 
     .timeline-marker {

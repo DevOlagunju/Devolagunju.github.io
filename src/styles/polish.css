@@ -390,11 +390,10 @@
 }
 
 .timeline-icon {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .timeline-item:hover .timeline-icon {
-  transform: translateX(-50%) scale(1.08);
   box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
 }
 

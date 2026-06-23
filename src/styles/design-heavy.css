@@ -397,10 +397,13 @@
 }
 
 .timeline-content h3 {
-  font-family: var(--font-family-display);
-  font-size: 1.25rem;
-  line-height: 1.35;
-  white-space: normal;
+  font-family: var(--font-family) !important;
+  font-size: 1.25rem !important;
+  line-height: 1.5 !important;
+  letter-spacing: normal !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  transform: none !important;
 }
 
 .timeline-period {
