@@ -40,7 +40,7 @@ const Preloader = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Crafting your experience...
+          Full-Stack Software Engineer
         </motion.p>
 
         <div className="preloader-progress">
