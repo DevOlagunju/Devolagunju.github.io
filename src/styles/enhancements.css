@@ -578,7 +578,7 @@
 
 /* Timeline glow on hover */
 .timeline-content {
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transition: box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .timeline-content:hover {

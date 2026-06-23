@@ -51,10 +51,9 @@ const Experience = () => {
             <motion.div
               key={index}
               className="timeline-item"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ scale: 1.01 }}
             >
               <div className="timeline-icon">
                 <FaBriefcase />

@@ -394,7 +394,7 @@
 }
 
 .timeline-item:hover .timeline-icon {
-  transform: scale(1.1);
+  transform: translateX(-50%) scale(1.08);
   box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
 }
 

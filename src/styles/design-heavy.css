@@ -376,12 +376,11 @@
 /* Timeline rich */
 .experience.section .timeline::before {
   background: linear-gradient(180deg, var(--primary-color), var(--secondary-color), transparent) !important;
-  width: 2px !important;
-  box-shadow: 0 0 12px rgba(147, 51, 234, 0.3);
 }
 
 .timeline-icon {
-  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 20px rgba(147, 51, 234, 0.3) !important;
+  border-color: var(--bg-secondary) !important;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2), 0 4px 16px rgba(147, 51, 234, 0.25) !important;
 }
 
 .timeline-content {
@@ -393,8 +392,15 @@
   background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary)) !important;
 }
 
+[data-theme="dark"] .timeline-icon {
+  border-color: var(--bg-secondary) !important;
+}
+
 .timeline-content h3 {
   font-family: var(--font-family-display);
+  font-size: 1.25rem;
+  line-height: 1.35;
+  white-space: normal;
 }
 
 .timeline-period {

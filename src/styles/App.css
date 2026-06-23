@@ -2032,6 +2032,8 @@ Color Alternation Pattern:
 }
 
 .timeline {
+    --timeline-rail: 28px;
+    --timeline-icon-size: 44px;
     position: relative;
     max-width: 800px;
     margin: 0 auto;
@@ -2040,23 +2042,46 @@ Color Alternation Pattern:
 .timeline::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: var(--timeline-rail);
     top: 0;
-    bottom: 0;
-    width: 4px;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
     background: var(--bg-gradient-primary);
     border-radius: 2px;
     box-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
+    z-index: 0;
 }
 
 .timeline-item {
     position: relative;
-    padding-left: 2.5rem;
+    padding-left: calc(var(--timeline-rail) + (var(--timeline-icon-size) / 2) + 1.25rem);
     padding-bottom: 3rem;
 }
 
 .timeline-item:last-child {
     padding-bottom: 0;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: var(--timeline-rail);
+    top: 1.5rem;
+    transform: translateX(-50%);
+    width: var(--timeline-icon-size);
+    height: var(--timeline-icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-gradient-primary);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.95rem;
+    z-index: 1;
+    border: 3px solid var(--bg-secondary);
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.15), var(--shadow-md);
+    flex-shrink: 0;
+    pointer-events: none;
 }
 
 .timeline-marker {
@@ -2088,8 +2113,20 @@ Color Alternation Pattern:
     border-radius: 16px;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
-    transition: all var(--transition-normal);
+    transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
     position: relative;
+    z-index: 2;
+    min-width: 0;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+    white-space: normal;
+    word-break: normal;
 }
 
 .timeline-content::before {
@@ -2110,9 +2147,15 @@ Color Alternation Pattern:
 }
 
 .timeline-content:hover {
-    transform: translateX(10px);
     box-shadow: var(--shadow-colored);
     border-color: rgba(147, 51, 234, 0.2);
+}
+
+.timeline-content h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .timeline-header {
@@ -3392,12 +3435,18 @@ Color Alternation Pattern:
         align-items: flex-start;
     }
 
-    .timeline::before {
-        left: -10px;
+    .timeline {
+        --timeline-rail: 22px;
+        --timeline-icon-size: 38px;
     }
 
     .timeline-item {
-        padding-left: 1.5rem;
+        padding-left: calc(var(--timeline-rail) + (var(--timeline-icon-size) / 2) + 1rem);
+    }
+
+    .timeline-icon {
+        font-size: 0.85rem;
+        top: 1.25rem;
     }
 
     .timeline-marker {
