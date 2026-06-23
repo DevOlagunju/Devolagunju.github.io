@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 import SectionHeader from './SectionHeader'
+import { CONTACT_EMAIL, FORMSPREE_ENDPOINT } from '../data/site'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaPaperPlane } from 'react-icons/fa'
 
 const Contact = () => {
@@ -23,77 +24,79 @@ const Contact = () => {
   }
 
   const handleSubmit = async (e) => {
-    console.log('🚀 Form submitted!')
     e.preventDefault()
     setLoading(true)
     setStatus({ type: '', message: '' })
 
-    const form = e.target
-    const formDataToSend = new FormData(form)
-    
-    console.log('📝 Form data:', {
-      name: formDataToSend.get('name'),
-      email: formDataToSend.get('email'),
-      subject: formDataToSend.get('subject'),
-      message: formDataToSend.get('message')
-    })
+    const { name, email, subject, message } = formData
+    const trimmed = {
+      name: name.trim(),
+      email: email.trim(),
+      subject: subject.trim(),
+      message: message.trim(),
+    }
+
+    if (!trimmed.name || !trimmed.email || !trimmed.subject || !trimmed.message) {
+      setStatus({ type: 'error', message: 'Please complete all fields before sending.' })
+      setLoading(false)
+      return
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailPattern.test(trimmed.email)) {
+      setStatus({ type: 'error', message: 'Please enter a valid email address.' })
+      setLoading(false)
+      return
+    }
 
     try {
-      console.log('📤 Sending to Formspree...')
-      
-      const response = await fetch('https://formspree.io/f/xwvnkknr', {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        body: formDataToSend,
         headers: {
-          'Accept': 'application/json'
-        }
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: trimmed.name,
+          email: trimmed.email,
+          subject: trimmed.subject,
+          message: trimmed.message,
+          _replyto: trimmed.email,
+          _subject: `Portfolio contact: ${trimmed.subject}`,
+        }),
       })
 
-      console.log('📥 Response status:', response.status)
-      
-      const data = await response.json()
-      console.log('📄 Response data:', data)
+      let data = {}
+      try {
+        data = await response.json()
+      } catch {
+        data = {}
+      }
 
       if (response.ok) {
-        console.log('✅ Success!')
-        setStatus({ 
-          type: 'success', 
-          message: '✅ Message sent successfully! I\'ll get back to you within 24 hours.' 
+        setStatus({
+          type: 'success',
+          message: "Message sent successfully. I'll get back to you within 24 hours.",
         })
         setFormData({ name: '', email: '', subject: '', message: '' })
-        form.reset()
-        
-        // Clear success message after 5 seconds
-        setTimeout(() => {
-          setStatus({ type: '', message: '' })
-        }, 5000)
+        setTimeout(() => setStatus({ type: '', message: '' }), 8000)
+      } else if (data.errors?.length) {
+        const errorMsg = data.errors.map((err) => err.message).join(', ')
+        setStatus({ type: 'error', message: `Could not send: ${errorMsg}` })
       } else {
-        console.log('❌ Error response')
-        // Handle Formspree specific errors
-        if (data.errors) {
-          const errorMsg = data.errors.map(err => err.message).join(', ')
-          console.log('Error details:', errorMsg)
-          setStatus({ 
-            type: 'error', 
-            message: `❌ Error: ${errorMsg}` 
-          })
-        } else {
-          setStatus({ 
-            type: 'error', 
-            message: '❌ Oops! Something went wrong. Please try again or email me directly.' 
-          })
-        }
+        setStatus({
+          type: 'error',
+          message: `Something went wrong. Please email me directly at ${CONTACT_EMAIL}.`,
+        })
       }
-    } catch (error) {
-      console.error('💥 Formspree Error:', error)
-      setStatus({ 
-        type: 'error', 
-        message: '❌ Network error. Please check your connection and try again.' 
+    } catch {
+      setStatus({
+        type: 'error',
+        message: `Network error. Please try again or email ${CONTACT_EMAIL} directly.`,
       })
     }
 
     setLoading(false)
-    console.log('✨ Form submission complete')
   }
 
   return (
@@ -119,8 +122,8 @@ const Contact = () => {
               <div className="contact-card-content">
                 <h3>Email Communication</h3>
                 <p>Professional inquiries and project discussions</p>
-                <a href="mailto:wasiu-ibrahim@outlook.com" className="contact-link">
-                  wasiu-ibrahim@outlook.com
+                <a href={`mailto:${CONTACT_EMAIL}`} className="contact-link">
+                  {CONTACT_EMAIL}
                 </a>
               </div>
             </div>
@@ -163,10 +166,7 @@ const Contact = () => {
               <p>Share your project details or ideas, and I'll respond within 24 hours to discuss how we can work together</p>
             </div>
 
-            <form className="contact-form" onSubmit={handleSubmit} action="https://formspree.io/f/xwvnkknr" method="POST">
-              {/* Hidden field for Formspree reply-to */}
-              <input type="hidden" name="_replyto" value={formData.email} />
-              
+            <form className="contact-form" onSubmit={handleSubmit} noValidate>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Full Name</label>
@@ -229,8 +229,18 @@ const Contact = () => {
                   className={`form-status ${status.type}`}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
+                  role="alert"
+                  aria-live="polite"
                 >
                   {status.message}
+                  {status.type === 'error' && (
+                    <>
+                      {' '}
+                      <a href={`mailto:${CONTACT_EMAIL}?subject=Portfolio%20inquiry`}>
+                        Email me directly
+                      </a>
+                    </>
+                  )}
                 </motion.div>
               )}
 

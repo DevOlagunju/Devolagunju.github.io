@@ -3,6 +3,9 @@ export const trustBrands = [
   'Twilio', 'AWS', 'React', 'Python', 'TensorFlow',
 ]
 
+export const CONTACT_EMAIL = 'wasiu-ibrahim@outlook.com'
+export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvnkknr'
+
 export const projectFilters = ['All', 'Full-Stack', 'AI/ML', 'Mobile', 'Cloud']
 
 export const navSections = [
