@@ -14,6 +14,6 @@ export const navSections = [
   { id: 'services', label: 'Services', short: 'Services' },
   { id: 'experience', label: 'Experience', short: 'Work' },
   { id: 'projects', label: 'Projects', short: 'Work' },
-  { id: 'testimonials', label: 'Testimonials', short: 'Reviews' },
+  { id: 'testimonials', label: 'Reviews', short: 'Reviews' },
   { id: 'contact', label: 'Contact', short: 'Contact' },
 ]

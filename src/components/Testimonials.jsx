@@ -10,8 +10,8 @@ const Testimonials = () => {
     <section id="testimonials" className="testimonials section section-alt section-rich" ref={ref}>
       <div className="container">
         <SectionHeader
-          title="Testimonials"
-          subtitle="What clients and colleagues say about working with me"
+          title="Reviews"
+          subtitle="Real feedback from clients I've worked with"
           isInView={isInView}
         />
 
