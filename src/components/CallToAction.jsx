@@ -3,7 +3,7 @@ import { useInView } from '../hooks/useInView'
 import { FaEnvelope, FaLinkedin, FaCheckCircle, FaRocket, FaCode, FaBolt } from 'react-icons/fa'
 
 const CallToAction = () => {
-  const [ref, isInView] = useInView({ threshold: 0.2 })
+  const [ref, isInView] = useInView()
 
   const features = [
     { icon: <FaCode />, text: 'Scalable & maintainable code' },

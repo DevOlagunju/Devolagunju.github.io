@@ -6,7 +6,7 @@ import { CONTACT_EMAIL, FORMSPREE_ENDPOINT } from '../data/site'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaPaperPlane } from 'react-icons/fa'
 
 const Contact = () => {
-  const [ref, isInView] = useInView({ threshold: 0.2 })
+  const [ref, isInView] = useInView()
   const [formData, setFormData] = useState({
     name: '',
     email: '',

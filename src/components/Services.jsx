@@ -5,7 +5,7 @@ import SectionHeader from './SectionHeader'
 import TiltCard from './TiltCard'
 
 const Services = () => {
-  const [ref, isInView] = useInView({ threshold: 0.2 })
+  const [ref, isInView] = useInView()
 
   const services = [
     {

@@ -7,7 +7,7 @@ import TiltCard from './TiltCard'
 import { projectFilters } from '../data/site'
 
 const Projects = () => {
-  const [ref, isInView] = useInView({ threshold: 0.2 })
+  const [ref, isInView] = useInView()
   const [activeFilter, setActiveFilter] = useState('All')
 
   const projects = [

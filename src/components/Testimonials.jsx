@@ -4,7 +4,7 @@ import SectionHeader from './SectionHeader'
 import TestimonialSlider from './TestimonialSlider'
 
 const Testimonials = () => {
-  const [ref, isInView] = useInView({ threshold: 0.2 })
+  const [ref, isInView] = useInView()
 
   return (
     <section id="testimonials" className="testimonials section section-alt section-rich" ref={ref}>

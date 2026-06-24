@@ -4,7 +4,7 @@ import { FaBriefcase } from 'react-icons/fa'
 import SectionHeader from './SectionHeader'
 
 const Experience = () => {
-  const [ref, isInView] = useInView({ threshold: 0.2 })
+  const [ref, isInView] = useInView()
 
   const experiences = [
     {

@@ -5,7 +5,7 @@ import Counter from './Counter'
 import SectionHeader from './SectionHeader'
 
 const About = () => {
-  const [ref, isInView] = useInView({ threshold: 0.2 })
+  const [ref, isInView] = useInView()
 
   const skills = [
     'React', 'Node.js', 'Python', 'TypeScript', 'AWS', 'Docker',
